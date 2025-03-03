@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors in Law - Consultoria Jurídica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 text-white fixed w-full z-10 top-0 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold">Doctors in Law</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="hover:underline">Sobre Nós</a></li>
+                <li><a href="#services" class="hover:underline">Serviços</a></li>
+                <li><a href="#contact" class="hover:underline">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-cover bg-center h-[500px] flex items-center justify-center text-white text-center" style="background-image: url('https://source.unsplash.com/1600x900/?law,justice')">
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+            <h2 class="text-4xl font-bold">Soluções Jurídicas para Empresas e Indivíduos</h2>
+            <p class="mt-2 text-lg">Especialistas em imigração, contratos, recuperação de crédito e mais</p>
+            <a href="#contact" class="mt-4 inline-block bg-yellow-500 px-6 py-2 text-lg font-bold rounded-lg hover:bg-yellow-400 transition">Entre em Contato</a>
+        </div>
+    </header>
+
+    <!-- Sobre Nós -->
+    <section id="about" class="py-16 bg-white fade-in">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-blue-900">Sobre Nós</h3>
+            <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
+                A **Doctors in Law** é uma empresa americana estabelecida desde **2019 na Flórida**, dedicada a auxiliar pessoas e empresas com questões legais nos Estados Unidos.  
+                Nosso time de especialistas oferece suporte completo para **imigração, contratos, recuperação de crédito, litígios e consultoria para negócios internacionais**.
+            </p>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="services" class="py-16 bg-gray-100 fade-in">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-blue-900">Nossos Serviços</h3>
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold text-blue-900">Imigração</h4>
+                    <p class="mt-2 text-gray-600">Assessoria para vistos EB2 NIW, EB3, H1B e cidadania.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold text-blue-900">Contratos</h4>
+                    <p class="mt-2 text-gray-600">Elaboração e revisão de contratos empresariais e comerciais.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold text-blue-900">Recuperação de Crédito</h4>
+                    <p class="mt-2 text-gray-600">Auxiliamos na cobrança e recuperação de valores nos EUA.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold text-blue-900">Problemas Judiciais</h4>
+                    <p class="mt-2 text-gray-600">Suporte em litígios e disputas legais nos Estados Unidos.</p>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold text-blue-900">Negócios Internacionais</h4>
+                    <p class="mt-2 text-gray-600">Consultoria jurídica para empresas estrangeiras operando nos EUA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-16 bg-white fade-in">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold text-blue-900">Fale Conosco</h3>
+            <form class="mt-8 max-w-lg mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
+                <input type="text" placeholder="Seu Nome" class="w-full p-3 rounded-lg mb-4 border border-gray-300" required>
+                <input type="email" placeholder="Seu E-mail" class="w-full p-3 rounded-lg mb-4 border border-gray-300" required>
+                <textarea placeholder="Sua Mensagem" class="w-full p-3 rounded-lg mb-4 border border-gray-300" rows="5" required></textarea>
+                <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-700 transition">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6 text-center">
+        <p>&copy; 2025 Doctors in Law. Todos os direitos reservados.</p>
+        <p>Flórida, EUA | Email: contact@doctorsinlaw.com</p>
+    </footer>
+
+    <!-- JavaScript para animações -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".fade-in");
+            function checkScroll() {
+                elements.forEach(el => {
+                    let rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
+
+</body>
+</html>
